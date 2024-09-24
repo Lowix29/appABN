@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        id="com.tuapp.abn"
+        version="1.0.0">
+    <name>Juego ABN</name>
+    <description>Juego matemático basado en el método ABN.</description>
+    <author email="tucorreo@ejemplo.com">Tu nombre</author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

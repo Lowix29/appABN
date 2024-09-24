@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Método ABN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<header>
+    
+</header>
+    <main>
+    <section class="juego" >
+    <div id="game-container">
+        <div id="operation-container">
+            <h1>Practica y diviertete con el Método ABN</h1>
+            <!-- Campo para introducir el nombre del alumno -->
+            <div id="student-name-section">
+        <label class="text-student" for="student-name">Para jugar introduce tu nombre:</label>
+        <input type="text" id="student-name" placeholder="Tu nombre">
+        </div>
+
+            <p id="operation">¿Cómo descompones 47 + 36?</p>
+        </div>
+
+        <div class="selectores">
+            <!-- Selector para elegir el tipo de operación -->
+<label for="operation-type">Tipo de operación:</label>
+<select id="operation-type">
+    <option value="add">Suma</option>
+    <option value="subtract">Resta</option>
+    <option value="multiply">Multiplicación</option>
+    <option value="divide">División</option>
+</select>
+
+<!-- Selector para elegir el rango de cifras -->
+<label for="digit-range">Rango de dígitos:</label>
+<select id="digit-range">
+    <option value="10">Una cifra</option>
+    <option value="100">Dos cifras</option>
+    <option value="1000">Tres cifras</option>
+    <option value="10000">Cuatro cifras</option>
+</select>
+
+        </div>
+
+        <div>
+            <!-- Selector de valor absoluto para restas -->
+<div id="absolute-value-selector" style="display: none;">
+    <label for="allow-absolute">Permitir resultado sin signo negativo</label>
+    <input type="checkbox" id="allow-absolute">
+</div>
+
+        </div>
+
+        <div id="abn-grid">
+            <div class="abn-row">
+                <div class="abn-cell">Operación</div>
+                <div class="abn-cell">Decenas</div>
+                <div class="abn-cell">Unidades</div>
+            </div>
+            <div class="abn-row">
+                <input type="text" class="abn-cell" placeholder="Operación" id="oper-note1">
+                <input type="text" class="abn-cell" placeholder="Decenas" id="tens-note1">
+                <input type="text" class="abn-cell" placeholder="Unidades" id="units-note1">
+            </div>
+            <div class="abn-row">
+                <input type="text" class="abn-cell" placeholder="Operación" id="oper-note2">
+                <input type="text" class="abn-cell" placeholder="Decenas" id="tens-note2">
+                <input type="text" class="abn-cell" placeholder="Unidades" id="units-note2">
+            </div>
+            <div class="abn-row">
+                <input type="text" class="abn-cell" placeholder="Operación" id="oper-note3">
+                <input type="text" class="abn-cell" placeholder="Decenas" id="tens-note3">
+                <input type="text" class="abn-cell" placeholder="Unidades" id="units-note3">
+            </div>
+            <div class="abn-row">
+                <input type="text" class="abn-cell" placeholder="Operación" id="oper-note4">
+                <input type="text" class="abn-cell" placeholder="Decenas" id="tens-note4">
+                <input type="text" class="abn-cell" placeholder="Unidades" id="units-note4">
+            </div>
+        </div>
+
+        <div id="result-section">
+            <p>Introduce el resultado final:</p>
+            <input type="number" id="final-result" placeholder="0">
+        </div>
+
+        <button id="check-answer">Comprobar Operación</button>
+        <button id="clear-grid">Limpiar Operación</button>
+        <div class="resultado" id="resultado">
+        <p id="feedback"></p>
+        <!-- Añadir un elemento img para mostrar las imágenes de feedback -->
+        <img id="feedback-image" src="" alt="feedback" style="display: none; ">
+    </div>
+
+    </div>
+</section>
+<section class="explicacion">
+    <h2>¿Qué es el Método ABN?</h2>
+    <p>
+        El <strong>método ABN</strong> (Algoritmo Basado en Números) es una forma de aprender matemáticas de manera visual y comprensible. 
+        A diferencia de los métodos tradicionales, donde los números se agrupan y se trabaja con un único cálculo, en el método ABN los 
+        números se descomponen, permitiendo realizar operaciones de forma más flexible y ajustada a la realidad del cálculo mental.
+    </p>
+    <h3>Beneficios del método ABN</h3>
+    <ul>
+        <li>Permite realizar operaciones matemáticas paso a paso, descomponiendo los números.</li>
+        <li>Facilita el aprendizaje de conceptos abstractos como la suma, resta, multiplicación y división.</li>
+        <li>Fomenta el pensamiento crítico y la capacidad de razonamiento en los niños.</li>
+        <li>Se adapta a las capacidades de cada niño, permitiendo aprender a su propio ritmo.</li>
+    </ul>
+
+    <h2>¿Cómo funciona el juego?</h2>
+    <p>
+        Este juego está diseñado para que los niños y adultos puedan practicar operaciones matemáticas utilizando el método ABN. 
+        El juego te permitirá realizar operaciones de suma, resta, multiplicación y división, y podrás personalizar el tipo de 
+        operación, así como la cantidad de cifras con las que trabajar.
+    </p>
+
+    <h3>Paso a paso para jugar:</h3>
+    <ol>
+        <li><strong>Selecciona el tipo de operación:</strong> En el juego puedes elegir entre cuatro tipos de operaciones:
+            <ul>
+                <li>Suma</li>
+                <li>Resta</li>
+                <li>Multiplicación</li>
+                <li>División</li>
+            </ul>
+            Usa el menú desplegable en la parte superior para elegir la operación que quieres practicar.
+        </li>
+        <li><strong>Selecciona el número de cifras:</strong> Puedes elegir trabajar con números de una cifra, dos cifras, tres cifras o cuatro cifras.
+            Esto te permitirá ajustar la dificultad según el nivel de aprendizaje. Usa el segundo menú desplegable para cambiar el rango de dígitos.
+        </li>
+        <li><strong>Resuelve la operación:</strong> Una vez que hayas seleccionado el tipo de operación y el rango de dígitos, 
+            se mostrará una operación en la pantalla. Descompón los números si lo necesitas utilizando el método ABN y escribe la respuesta final en el cuadro de texto.
+        </li>
+        <li><strong>Verifica la respuesta:</strong> Al hacer clic en el botón "Comprobar", el juego te dirá si tu respuesta es correcta o incorrecta. Si es correcta, te mostrará un mensaje positivo junto con el resultado.
+        </li>
+    </ol>
+
+    <h3>Operaciones de resta y el valor absoluto</h3>
+    <p>
+        Para las operaciones de resta, el juego incluye una opción especial: el <strong>valor absoluto</strong>. En las restas, a veces el resultado puede ser negativo, 
+        por ejemplo, 66 - 79 = -13. Si no deseas preocuparte por el signo negativo, puedes activar la opción "Permitir resultado sin signo negativo", 
+        lo que hará que el juego acepte la respuesta correcta sin necesidad de incluir el signo negativo. Es decir, tanto 13 como -13 serán válidos si el valor absoluto está activado.
+    </p>
+    <p>
+        Sin embargo, si prefieres practicar el uso correcto del signo negativo, simplemente deja esta opción desactivada. De este modo, deberás incluir el signo negativo cuando sea necesario.
+    </p>
+
+    <h2>Consejos para usar el juego</h2>
+    <ul>
+        <li><strong>Practica diferentes operaciones:</strong> Cambia entre suma, resta, multiplicación y división para dominar todas las operaciones básicas.</li>
+        <li><strong>Prueba con diferentes cifras:</strong> Empieza con números de una cifra si estás aprendiendo, y luego avanza a cifras más grandes para aumentar la dificultad.</li>
+        <li><strong>Usa la opción de valor absoluto en las restas:</strong> Si encuentras que los resultados negativos son difíciles de manejar, utiliza la opción de valor absoluto para facilitar el juego.</li>
+        <li><strong>Revisa tu respuesta:</strong> Si fallas una operación, el juego te dirá el resultado correcto para que puedas aprender de tus errores.</li>
+        <li><strong>Utiliza el método ABN:</strong> Descompón los números si es necesario para hacer los cálculos paso a paso. Este método es especialmente útil para niños que están empezando a aprender matemáticas.</li>
+    </ul>
+
+    <h3>¿Cómo limpiar la operación?</h3>
+    <p>
+        Si quieres empezar una nueva operación, simplemente presiona el botón "Limpiar". Esto borrará tu respuesta actual y te permitirá elegir una nueva operación o mantener la misma si lo prefieres.
+    </p>
+
+    <h2>¡A divertirse aprendiendo matemáticas!</h2>
+    <p>
+        Este juego está diseñado para que aprender matemáticas sea divertido y accesible para todos. Practica diferentes operaciones, experimenta con las cifras y mejora tu cálculo mental. 
+        ¡No olvides que puedes usar el método ABN para descomponer los números y hacer las operaciones paso a paso!
+    </p>
+</section>
+</main>
+<footer>
+    
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
