@@ -11,7 +11,7 @@
     "cordova": "^12.0.0"
   },
   "devDependencies": {
-    "ionic": "^7.1.1"
+    "ionic": "^5.4.16"
   },
   "cordova": {
     "platforms": [
