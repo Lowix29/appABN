@@ -1,0 +1,411 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: url(cohete.png), auto;
+    background-image: url('fondos.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+    position: relative; /* Necesario para que funcione el pseudo-elemento */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa con opacidad del 50% (ajusta los valores si es necesario) */
+    z-index: 1; /* Asegura que la capa se sitúe encima del fondo pero debajo del contenido */
+}
+
+
+
+/* Sección educativa y estilo del contenido */
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté encima de la capa con opacidad */
+}
+
+
+* {
+    box-sizing: inherit;
+    cursor: url(cohete.png), auto;
+}
+
+h1 {
+    font-size: 28px;
+    color: #ff6347;
+    margin-top: -17px;
+    margin-bottom: 0px;
+}
+
+#student-name-section{
+padding:15px;
+}
+
+.text-student{
+    
+    text-decoration: none;
+}
+
+#student-name{
+    padding: 7px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 180px;
+    color: black;
+    border: 4px solid red;
+    border-radius: 20px;
+
+}
+
+
+
+/* Ajuste del contenedor del juego para pantallas más pequeñas */
+#game-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 15px auto;
+    overflow-x: hidden;
+}
+
+/* Ajustes para el texto de la operación */
+#operation {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border: 1px solid;
+    padding: 15px;
+    border-radius: 20px;
+    background: aliceblue;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+#abn-grid {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Ajuste de la cuadrícula ABN para pantallas más pequeñas */
+.abn-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.abn-cell {
+    background-color: #ffcccb;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+    width: 100%;
+}
+
+input.abn-cell {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Sección del resultado */
+#result-section {
+    margin-top: 20px;
+}
+
+#result-section p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+#final-result {
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 180px;
+    color: black;
+    border: 4px solid red;
+    border-radius: 20px;
+}
+
+/* Botones */
+#check-answer, #clear-grid {
+    padding: 12px 20px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+#absolute-value-selector {
+    margin-bottom: 15px;
+    font-size: 16px;
+    margin-top: -15px;
+    cursor: pointer !important;
+}
+
+#allow-absolute{
+    width: 25px;
+    height: 25px;
+}
+
+/* Estilo botones */
+#check-answer {
+    background-color: red;
+    cursor: url(tambor.webp), auto;
+}
+
+#clear-grid {
+    background-color: coral;
+    cursor: url(escoba.webp), auto;
+}
+
+#clear-grid:hover {
+    background-color: rgb(255, 101, 45);
+}
+
+#check-answer:hover {
+    background-color: rgb(190, 0, 0);
+}
+
+/* Feedback */
+#feedback {
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+#feedback-image {
+    margin-top: 15px;
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 20px;
+    display: none;
+}
+
+/* Sección de feedback ajustada */
+#resultado.resultado {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    border: 1px solid;
+    margin-top: 32px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+    display: none;
+}
+
+/* Estilo básico para los selectores */
+label {
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+select {
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 4px solid;
+    border-color: #ff2700;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 200px;
+}
+
+
+
+.seccion {
+    margin: 0 auto;
+}
+
+.explicacion h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.explicacion h3 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.explicacion p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.explicacion ul {
+    text-align: left;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.explicacion ol {
+    text-align: left;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.explicacion ul li,
+.explicacion ol li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.explicacion strong {
+    font-weight: bold;
+    color: #ff6347;
+}
+
+footer {
+    background-color: #ff2700;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+
+.selectores{
+
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 10px;
+
+}
+
+/* Medios y pequeños dispositivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #game-container {
+        padding: 20px;
+    }
+
+    #operation {
+        font-size: 20px;
+    }
+
+    .abn-cell {
+        font-size: 16px;
+    }
+
+    input.abn-cell {
+        font-size: 14px;
+    }
+
+    #feedback {
+        font-size: 24px;
+    }
+
+    #feedback-image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    #check-answer,
+    #clear-grid {
+        font-size: 16px;
+        max-width: 150px;
+    }
+
+    select {
+        font-size: 16px;
+        max-width: 150px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    #game-container {
+        padding: 15px;
+    }
+
+    #operation {
+        font-size: 18px;
+    }
+
+    .abn-cell {
+        font-size: 14px;
+    }
+
+    input.abn-cell {
+        font-size: 12px;
+    }
+
+    #feedback {
+        font-size: 20px;
+    }
+
+    #feedback-image {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    #check-answer,
+    #clear-grid {
+        font-size: 14px;
+        max-width: 120px;
+    }
+
+    select {
+        font-size: 14px;
+        max-width: 120px;
+    }
+
+    .selectores {
+        flex-direction: column;
+        align-items: center;   
+    }
+}

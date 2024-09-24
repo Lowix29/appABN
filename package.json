@@ -1,0 +1,21 @@
+{
+  "name": "abnjuego",
+  "version": "1.0.0",
+  "description": "Juego educativo basado en el método ABN",
+  "main": "index.html",
+  "scripts": {
+    "start": "ionic serve",
+    "build": "ionic build"
+  },
+  "dependencies": {
+    "cordova": "^12.0.0"
+  },
+  "devDependencies": {
+    "ionic": "^5.4.16"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}

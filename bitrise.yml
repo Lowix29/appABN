@@ -1,0 +1,11 @@
+workflows:
+  primary:
+    steps:
+    - git-clone:
+        inputs:
+        - depth: "1"
+    - gradle-runner:
+        inputs:
+        - gradle_file: "$BITRISE_SOURCE_DIR/build.gradle"
+        - tasks: "assembleDebug"
+    - deploy-to-bitrise-io:
